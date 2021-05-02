@@ -1,0 +1,104 @@
+<!doctype HTML>
+<html>
+  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ <meta name="theme-color" content= #004E67 >
+</head>
+<style>
+body {
+  background-image: url("images/75e72f95536a51a22ab32e1f08646557.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+
+   <body>
+   <style>
+   h1{
+     text-align: center ;
+     color: white ;
+   }
+    h1 {
+      font-weight: bold ;
+    }
+    form
+    {
+      text-align: center ;
+    }
+    a
+    {
+      color:skyblue;
+    }
+ 
+/* background color to the top navigation */
+.topnav {
+  background-color: transparent;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* color to the active/current link */
+.topnav a.active {
+  background-color: #004E67;
+  color: white;
+}
+    </style>
+    
+   <body>
+     <div class="topnav">
+  <a class="active" href="search.html">Home</a>
+  <a href="vpn.html">Chats</a>
+  <a href="#contact">Videos</a>
+  <a href="apps.html">Apps</a>
+</div>
+     
+
+<h1>REDX</h1>
+
+
+<head><link type="text/css" rel="stylesheet" href="search_style.css"/><script type="text/javascript" src="jquery.js"></script><script type="text/javascript">function do_search(){
+ var search_term=$("#search_term").val();
+ $.ajax
+ ({
+  type:'post',
+  url:'get_results.php',
+  data:{
+   search:"search",
+   search_term:search_term
+  },
+  success:function(response) 
+  {
+   document.getElementById("result_div").innerHTML=response;
+  }
+ });
+ 
+ return false;}</script>
+ </head>
+  
+<div id="wrapper"><div id="search_box">
+ <form method="post"action="get_results.php" onsubmit="return do_search();">
+  <input type="text" id="search_term" name="search_term" placeholder="Enter Search" onkeyup="do_search();">
+  <input type="submit" name="search" value="SEARCH">
+ </form></div><div id="result_div"></div></div>
+<br>
+   </body>
+
+
+</html>

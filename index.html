@@ -1,0 +1,98 @@
+<!DOCTYPE html> 
+<html>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="theme-color" content="black">
+
+<head>
+     
+<title> Login Page </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-image: url("images/bg.jpg");
+  background-size: cover ;
+}
+</style>  
+<style>
+h1 
+{
+  color:#FCFDFF ;
+}
+button {   
+       background-color: skyblue;   
+       width: 100%;  
+        color: orange;   
+        padding: 14px;   
+        margin: 10px 5px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 0px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px ;   
+        box-sizing: border-box;   
+        background-color: ;
+    }  
+    label
+    {
+      color:white;
+    }
+ button:hover {   
+        opacity: 0.7;  
+        color: white;
+    }   
+  button:button {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {  
+        padding: 50px;   
+        background-color: transparent; 
+    }  
+    a {
+      width: auto;
+    }
+</style>
+</heard>
+<body>    
+    <center> <h1>REDX</h1> </center>   
+    <form>  
+    <form method="post" action="home.html">
+         <div class= "container">
+            <label> : </label>   
+            <input type="text" placeholder="Enter Username" name="username" required>  
+            <label> : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required>  
+            <button type="submit" value="login" name="submit"> login</button>   
+            <input type="checkbox" checked="checked"> remember me</div>
+            </form>  
+               
+            <a href="sign_up.html"> register </a>
+         
+</body> 
+<script language="javascript">
+function check(form)
+{
+
+if(form.user.value == "public" && form.pass.value == "peasants")
+{
+	return true;
+}
+else
+{
+	alert("Error Password or Username")
+	return false;
+}
+}
+	      </script>
+</html>
+
