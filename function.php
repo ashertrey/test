@@ -13,7 +13,7 @@ session_start();// connect to database$db = mysqli_connect​(​'localhost'​,
 	if (​empty​(​$psw​)​) { 
 		array_push($errors, "Password is required"); 
 	}
-	if ($password_1 != $psw-repeat) {
+	if ($psw-repeat != $psw-repeat) {
 		array_push($errors, "The two passwords do not match");
 	}	// register user if there are no errors in the form	if (count($errors) == 0) {
 		$password = md5​(​$password_1​)​;​//encrypt the password before saving in the database
