@@ -1,5 +1,5 @@
 <?php 
-if (isset($_POST['home.html'])) {
+if (isset($_POST['login'])) {
       $username = $_POST['username'];
       $password = $_POST['password'];
       if (DB::query('SELECT username FROM users WHERE username=:username', array(':username'=>$username))) {
