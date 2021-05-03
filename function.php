@@ -52,3 +52,9 @@ session_start();// connect to database$db = mysqli_connect​(​'localhost'​,
 			}
 		echo '</div>';
 	}}
+function isLoggedIn(){
+	if (​isset​(​$_SESSION​[​'user'​]​)​) {
+		return true;
+	}else{
+		return false;
+	}}
