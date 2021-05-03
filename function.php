@@ -3,17 +3,17 @@ session_start();// connect to database$db = mysqli_connect​(​'localhost'​,
 // call the register() function if register_btn is clickedif (​isset​(​$_POST​[​'register_btn'​]​)​) {
 	register();}// REGISTER USERfunction register(){	// call these variables with the global keyword to make them available in function	global $db, $errors, $username, $email;	// receive all input values from the form. Call the e() function    // defined below to escape form values	$username    =  e​(​$_POST​[​'username'​]​)​;
 	$email       =  e($_POST['email']);
-	$password_1  =  e​(​$_POST​[​'password_1'​]​)​;
-	$password_2  =  e​(​$_POST​[​'password_2'​]​)​;	// form validation: ensure that the form is correctly filled	if (empty($username)) { 
+	$psw  =  e​(​$_POST​[​'psw'​]​)​;
+	$psw-repeat  =  e​(​$_POST​[​'psw-repeat'​]​)​;	// form validation: ensure that the form is correctly filled	if (empty($username)) { 
 		array_push($errors, "Username is required"); 
 	}
 	if (empty($email)) { 
 		array_push($errors, "Email is required"); 
 	}
-	if (​empty​(​$password_1​)​) { 
+	if (​empty​(​$psw​)​) { 
 		array_push($errors, "Password is required"); 
 	}
-	if ($password_1 != $password_2) {
+	if ($password_1 != $psw-repeat) {
 		array_push($errors, "The two passwords do not match");
 	}	// register user if there are no errors in the form	if (count($errors) == 0) {
 		$password = md5​(​$password_1​)​;​//encrypt the password before saving in the database
@@ -23,7 +23,7 @@ session_start();// connect to database$db = mysqli_connect​(​'localhost'​,
 					  VALUES​(​'$username'​, '$email', '$user_type', '$password')";
 			mysqli_query($db, $query);
 			$_SESSION​[​'success'​]  = "New user successfully created!!";
-			header('location: home.php');
+			header('location: home.html');
 		}else{
 			$query = "INSERT INTO users (username, email, user_type, password) 
 					  VALUES​(​'$username'​, '$email', 'user', '$password')";
@@ -61,7 +61,7 @@ function isLoggedIn(){
 // log user out if logout button clickedif (​isset​(​$_GET​[​'logout'​]​)​) {
 	session_destroy();
 	unset​(​$_SESSION​[​'user'​]​)​;
-	header("location: login.php");}
+	header("location: login.html");}
 // call the login() function if register_btn is clickedif (​isset​(​$_POST​[​'login_btn'​]​)​) {
 	login();}// LOGIN USERfunction login(){
 	global $db, $username, $errors;	// grap form values	$username = e​(​$_POST​[​'username'​]​)​;
