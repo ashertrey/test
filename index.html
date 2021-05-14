@@ -22,30 +22,6 @@ if ($login() == true) {
    <meta name="viewport" content="width=device-width, initial-scale=1">
   
  <meta name="theme-color" content= #004E67 >
-<script type="text/javascript" src=​"https://www.google.com/jsapi"​>​</​script​>
-<script src=​"http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"
-type=​"text/javascript"​>​</​script​>
-
-<style type="text/css">
-@import url(​"http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.css"​);
-
-#feedControl {
-margin-top : 10px;
-margin-left: auto;
-margin-right: auto;
-width : 440px;
-font-size: 12px;
-color: #9CADD0;
-}
-</style>
-<script type="text/javascript">
-function load() {
-var feed ="​http:​//feeds.bbci.co.uk/news/world/rss.xml";​new GFdynamicFeedControl(feed, "feedControl");
-
-}
-google.load("feeds", "1");
-google.setOnLoadCallback(load);
-</script>
 </head>
 <style>
 body {
@@ -140,10 +116,26 @@ body {
   <input type="submit" name="search" value="SEARCH">
  </form></div><div id="result_div"></div></div>
 <br>
- 
-<div id="body">
-<div id​=​"feedControl"​>​Loading...​</​div​>
-</div>
+ <section class="recentNews">
+  <div class="container">
+    <h2 class​=​"news-title"​>​Recent News</h2>
+    <div class="row">
+      <div class="ct-blog col-sm-6 col-md-4">
+        <div class="inner">
+          <div class="fauxcrop">
+            <a href="#"><img alt="News Entry" src​=​"https://www.solodev.com/assets/recent-news/news-entry-1.jpg"​><​/a>
+          </div>
+          <div class​=​"ct-blog-content"​>
+            <div class="ct-blog-date">
+              <​span​>​March​<​/span><strong>1</​strong​>
+            </div>
+            <h3 class​=​"ct-blog-header"​>
+              WebCorpCo Will Be Visiting a Number of Upcoming Conferences
+            </h3>
+          </div>
+<link href​=​"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href​=​"recent-news-boxes.css" rel="stylesheet">
+<script src​=​"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"​><​/script>
+<script src​=​"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"​><​/script>
 </body>
-
 </html>
